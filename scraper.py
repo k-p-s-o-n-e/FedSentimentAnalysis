@@ -36,8 +36,8 @@ class SCRAPER():
             exit()
 
         soup = BeautifulSoup(resp.text, 'html.parser')
-        soup = soup.find('div', {'class':'col-xs-12 col-sm-8 col-md-9'})
-        self.endpoints.extend([year['href'] for year in soup.findAll('a')])
+        soup = soup.find_all('a', href=re.compile('^/monetarypolicy/fomchistorical\d{4}.htm'))
+        self.endpoints.extend([year['href'] for year in soup])
 
     def run(self):
         self.get_endpoints()
