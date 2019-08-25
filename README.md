@@ -1,3 +1,4 @@
 # FedSentimentAnalysis
 
-#In Progress
+In Progress
+NLP on Fed Statements
